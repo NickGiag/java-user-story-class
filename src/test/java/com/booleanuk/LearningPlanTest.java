@@ -9,6 +9,7 @@ public class LearningPlanTest {
     public void addItemReturnsTrueOnSuccessAndBothListsArePopulated(){
 
         LearningPlan learningPlan = new LearningPlan();
+        learningPlan.capacity = 1;
         String item = "Java Introduction";
         int itemPrice = 20;
 
@@ -16,6 +17,18 @@ public class LearningPlanTest {
         Assertions.assertEquals(item, learningPlan.planItems.get(0));
         Assertions.assertEquals(itemPrice, learningPlan.planCosts.get(0));
 
+
+    }
+
+    @Test
+    public void addItemReturnsFalse() {
+        LearningPlan learningPlan = new LearningPlan();
+        learningPlan.capacity = 1;
+        String item = "Java Introduction";
+        int itemPrice = 20;
+        learningPlan.addItem(item, itemPrice);
+
+        Assertions.assertFalse(learningPlan.addItem(item, itemPrice));
 
     }
 }

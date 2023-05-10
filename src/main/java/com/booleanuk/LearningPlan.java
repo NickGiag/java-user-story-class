@@ -14,7 +14,7 @@ public class LearningPlan {
         planCosts = new ArrayList<>();
     }
     public boolean addItem(String name, int cost) {
-        if (capacity < planItems.size()) {
+        if (capacity <= planItems.size()) {
             return false;
         } else {
             planItems.add(name);
