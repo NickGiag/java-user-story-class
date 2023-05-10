@@ -22,4 +22,17 @@ public class LearningPlan {
             return true;
         }
     }
+
+    public boolean removeItem(String name){
+        int index = planItems.indexOf(name);
+        if(index < 0){
+            System.out.println("Given plan could not be found");
+            return false;
+        }
+
+        planItems.remove(index);
+        planCosts.remove(index);
+
+        return true;
+    }
 }
